@@ -5,6 +5,9 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+
 /**
  * Created by jdbaker on 7/25/18.
  */
@@ -12,20 +15,13 @@ public class PriceSeriesTest {
 
     @Test
     public void given_valid_price_then_price_series_count_increased() {
-        /*final PriceSeries priceSeries = new PriceSeries();
+        final PriceSeries priceSeries = new PriceSeries();
         final long initialCount = priceSeries.stream().count();
-        final DailyPrice price = new DailyPrice
-                                        .builder()
-                                        .withOpen(BigDecimal.valueOf(100.00))
-                                        .withHigh(BigDecimal.valueOf(100.00))
-                                        .withLow(BigDecimal.valueOf(100.00))
-                                        .withClose(BigDecimal.valueOf(100.00))
-                                        .withTradeDate(LocalDate.now())
-                                        .build();
+        final DailyPrice price = mock(DailyPrice.class);
         priceSeries.add(price);
-        org.junit.Assert.assertEquals(initialCount+1, priceSeries.stream().count());*/
-    }
 
+        assertEquals(initialCount+1, priceSeries.stream().count());
+    }
 
     @Test(expected = NullPointerException.class)
     public void given_null_price_then_exception() {

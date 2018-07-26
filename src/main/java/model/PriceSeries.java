@@ -11,7 +11,6 @@ import java.util.stream.Stream;
  * Created by jdbaker on 7/25/18.
  */
 public class PriceSeries {
-
     private final Map<LocalDate, DailyPrice> series;
 
     public PriceSeries() {
@@ -19,9 +18,7 @@ public class PriceSeries {
     }
 
     public PriceSeries add(@NonNull DailyPrice dailyPrice) {
-
         this.series.put(dailyPrice.getTradeDate(), dailyPrice);
-
         return this;
     }
 
